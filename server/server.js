@@ -46,7 +46,7 @@ io.on("connection",(socket) =>{
 app.use(express.json({ limit: "10mb" }));
 app.use(cors());
 
-app.use("/api/status", (req, res) => {
+app.get("/api/status", (req, res) => {
   res.send("Server is Live");
 });
 
@@ -60,4 +60,4 @@ if(process.env.NODE_ENV !== "production"){
   server.listen(PORT, () => console.log("server running in the Port :" + PORT));
 }
 
-export default server;
+export default app;
